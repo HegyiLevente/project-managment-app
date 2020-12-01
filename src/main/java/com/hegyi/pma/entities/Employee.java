@@ -36,8 +36,7 @@ public class Employee {
 
 	public Employee() {}
 	
-	public Employee(long employeeId, String firstName, String lastName, String emailAddress) {
-		this.employeeId = employeeId;
+	public Employee(String firstName, String lastName, String emailAddress) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailAddress = emailAddress;
