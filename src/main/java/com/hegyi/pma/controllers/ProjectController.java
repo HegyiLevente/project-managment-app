@@ -14,22 +14,24 @@ import com.hegyi.pma.dao.EmployeeRepository;
 import com.hegyi.pma.dao.ProjectRepository;
 import com.hegyi.pma.entities.Employee;
 import com.hegyi.pma.entities.Project;
+import com.hegyi.pma.services.EmployeeService;
+import com.hegyi.pma.services.ProjectService;
 
 @Controller
 @RequestMapping("/projects")
 public class ProjectController {
 	
-	private ProjectRepository projectRepository;
-	private EmployeeRepository employeeRepository;
-	
-	public ProjectController(ProjectRepository projectRepository, EmployeeRepository employeeRepository) {
-		this.projectRepository = projectRepository;
-		this.employeeRepository = employeeRepository;
+	private ProjectService projectService;
+	private EmployeeService employeeService;
+
+	public ProjectController(ProjectService projectService, EmployeeService employeeService) {
+		this.projectService = projectService;
+		this.employeeService = employeeService;
 	}
 
 	@GetMapping
 	public String displayProjects(Model model) {
-		List<Project> projectList = projectRepository.findAll();
+		List<Project> projectList = projectService.findAll();
 		model.addAttribute("projectList", projectList);
 		
 		return "projects/projects-list";
@@ -40,7 +42,7 @@ public class ProjectController {
 		Project project = new Project();
 		model.addAttribute("project", project);
 		
-		List<Employee> allEmployees = employeeRepository.findAll();
+		List<Employee> allEmployees = employeeService.findAll();
 		model.addAttribute("allEmployees", allEmployees);
 
 		return "projects/new-project";
@@ -48,7 +50,7 @@ public class ProjectController {
 	
 	@PostMapping("/save")
 	public String createProject(Project project) {
-		projectRepository.save(project);
+		projectService.save(project);
 
 		return "redirect:/projects";
 	}
