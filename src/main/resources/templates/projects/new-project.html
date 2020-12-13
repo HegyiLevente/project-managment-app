@@ -13,13 +13,13 @@
     
 </head>
   
-<body>
+<body style="background-color: #ededed;">
   
   	<nav th:replace="layouts :: navbar"></nav>
   
   	<div class="container pt-3">
   	
-  		<form action="/projects/save" method="POST" th:object="${project}">
+  		<form autocomplete="off" th:action="@{/projects/save}" method="POST" th:object="${project}">
   			<div class="form-group row">
 				<label for="name" class="col-sm-2 col-form-label">Project name</label>
   				<div class="col-sm-8">
