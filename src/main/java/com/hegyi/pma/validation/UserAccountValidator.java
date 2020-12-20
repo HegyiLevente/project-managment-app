@@ -1,4 +1,4 @@
-package com.hegyi.pma.security;
+package com.hegyi.pma.validation;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.hegyi.pma.entities.UserAccount;
-import com.hegyi.pma.security.UserAccountValidator;
 import com.hegyi.pma.services.SecurityService;
 import com.hegyi.pma.services.UserAccountService;
+import com.hegyi.pma.validation.UserAccountValidator;
 
 @Controller
 public class UserAccountController {
@@ -37,7 +37,7 @@ public class UserAccountController {
 	}
 	
 	@PostMapping("/registration/save")
-	public String registrationSave(@ModelAttribute("userAccount") UserAccount userAccount, BindingResult bindingResult) {
+	public String registrationSave(UserAccount userAccount, BindingResult bindingResult) {
 		this.userAccountValidator.validate(userAccount, bindingResult);
 		
 		if(bindingResult.hasErrors()) {

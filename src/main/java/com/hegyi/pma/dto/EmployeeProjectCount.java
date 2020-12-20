@@ -1,6 +1,6 @@
 package com.hegyi.pma.dto;
 
-public interface EmployeeProject {
+public interface EmployeeProjectCount {
 
 	public String getFirstName();
 	

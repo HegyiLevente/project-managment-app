@@ -24,4 +24,12 @@ public class ProjectService {
 		this.projectRepository.save(project);
 	}
 
+	public Project findById(Long id) {
+		return this.projectRepository.findByProjectId(id);
+	}
+
+	public void deleteById(Long id) {
+		this.projectRepository.deleteById(id);
+	}
+
 }

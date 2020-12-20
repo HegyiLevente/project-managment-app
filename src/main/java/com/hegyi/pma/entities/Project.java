@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Project {
@@ -21,6 +22,7 @@ public class Project {
 	@SequenceGenerator(name="project_seq", sequenceName = "project_seq", allocationSize = 1)
 	private long projectId;
 	
+	@NotBlank(message="Can not be empty")
 	private String name;
 	
 	private String stage;
