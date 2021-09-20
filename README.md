@@ -5,7 +5,8 @@
 
 # What I Learned
 
-* How to work with SQL in a postgresql database, creating and altering tables, sequences making scripts and executing them using hibernate only to validate my entities 
+* How to work with SQL in a postgresql database, creating and altering tables
+* How to create scripts and execute them, using hibernate only to validate my entities 
 * Spring mvc concepts and how they are related to each other
 * Spring security at a basic level
 * How thymeleaf works with spring mvc
